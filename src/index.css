@@ -1,0 +1,158 @@
+@import "tailwindcss";
+@import "../node_modules/@fontsource/inter/400.css";
+@import "../node_modules/@fontsource/inter/600.css";
+@import "../node_modules/@fontsource/syne/400.css";
+@import "../node_modules/@fontsource/syne/700.css";
+@import "../node_modules/@fontsource/syne/800.css";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --font-body: "inter", sans-serif;
+  --font-heading: "syne", sans-serif;
+  --color-gradient: linear-gradient(
+    180deg,
+    rgba(194, 59, 220, 1) 0%,
+    rgba(80, 41, 215, 1) 100%
+  );
+}
+
+@layer base {
+  body {
+    @apply bg-black font-body text-white text-xl overflow-x-clip;
+  }
+  h3 {
+    @apply font-heading font-medium uppercase text-2xl;
+  }
+}
+
+@layer components {
+  .main-container {
+    @apply max-w-[1800px] w-full m-auto px-4 lg:px-12;
+  }
+}
+
+.gradient-background {
+  background: var(--color-gradient);
+}
+
+#classForLines {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 12px;
+    width: 100%;
+    height: 1vh;
+    background: var(--color-gradient);
+    z-index: -1;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    margin-left: 55px;
+    left: 0;
+    bottom: 6px;
+    width: 80%;
+    height: 2px;
+    background: var(--color-gradient);
+    z-index: -1;
+  }
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px white;
+  color: transparent;
+  /* background: var(--color-gradient);
+  background-clip: text; */
+}
+
+.designer-text {
+  -webkit-text-stroke: black;
+  color: transparent;
+  background: var(--color-gradient);
+  background-clip: text;
+}
+
+#Create {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 100px;
+    width: 98%;
+    margin-left: 85px;
+    height: 10vh;
+    background: var(--color-gradient);
+    z-index: -1;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    margin-left: 350px;
+    left: 0;
+    bottom: 50px;
+    width: 80%;
+    height: 20px;
+    background: var(--color-gradient);
+    z-index: -1;
+  }
+}
+
+.navlinkdefaultpadding {
+  @apply pt-2.5 pb-2.5 pl-6 pr-6;
+}
+
+.hovertransitions:hover {
+  @apply bg-black text-white pt-2.5 pb-2.5 pl-6 pr-6 rounded-3xl;
+}
+
+.btn {
+  background:
+    var(--color-gradient) padding-box,
+    var(--color-gradient) border-box;
+}
+
+.btn:hover {
+}
+
+.btn-white {
+  background:
+    linear-gradient(#000, #000) padding-box,
+    var(--color-gradient) border-box;
+}
+
+.btn-white:hover {
+  scale: 1.05;
+  color: white;
+  background:
+    var(--color-gradient) padding-box,
+    var(--color-gradient) border-box;
+}
+
+@media (max-width: 1024px) {
+  #classForLines::before {
+    bottom: 4px;
+  }
+  #classForLines::after {
+    bottom: 0;
+    margin-left: 0px;
+  }
+}
+
+.heroSection {
+  z-index: 0;
+}
+
+.overflow-container::-webkit-scrollbar {
+  background-color: transparent;
+}
+
+.overflow-container::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background: var(--color-gradient);
+}
